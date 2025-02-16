@@ -4,7 +4,7 @@ const qrcode = require("qrcode");
 const http = require("http");
 const socketIo = require("socket.io");
 const cors = require("cors");
-const { VALID_NUMBERS } = require("./valid");
+const { VALID_NUMBERS } = require("./valid_numbers");
 
 const app = express();
 const server = http.createServer(app);
