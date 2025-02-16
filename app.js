@@ -64,12 +64,12 @@ const initializeClient = (userId) => {
 };
 
 // API to check authentication status
-app.get("/check-auth/:userId", (req, res) => {
+app.get("/api/check-auth/:userId", (req, res) => {
   res.json({ authenticated: authStatus[req.params.userId] || false });
 });
 
 // Logout API for a specific user
-app.post("/logout", async (req, res) => {
+app.post("/api/logout", async (req, res) => {
   const { userId } = req.body;
 
   if (!clients[userId]) {
@@ -94,7 +94,7 @@ app.post("/logout", async (req, res) => {
 });
 
 // API to send bulk messages
-app.post("/send-bulk-messages", async (req, res) => {
+app.post("/api/send-bulk-messages", async (req, res) => {
   const { userId, message } = req.body;
   const client = clients[userId];
 
